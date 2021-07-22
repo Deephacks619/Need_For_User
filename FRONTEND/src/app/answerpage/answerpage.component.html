@@ -1,0 +1,25 @@
+<div class="register container">
+    <h2 class="capt text-center">Answer Page</h2>
+    <div>
+        <form #ref1="ngForm" >
+
+            <div class="form-group ">
+                <label for="phone">Phone Number (we are asking your number because to match your data with this number)</label>   
+                <input type="number" class="form-control" id="phone" name="phone" placeholder="Enter your Phone Number" minlength="10" and maxlength="10" required [(ngModel)]="phonenumber">
+              </div>
+
+            
+            <div class="form-group ">
+                <label for="answer">Do you want to give the item what the user wants?</label>
+                <select id="answer" name="answer" class="form-control" [(ngModel)]="answer" ngModel required>
+                  <option value="" selected hidden disabled>select yes or no</option>
+                  <option value="yes">YES</option>
+                  <option value="no">NO</option>
+                </select>
+            </div>
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary" (click)=getdata() [disabled]=!ref1.valid>Submit</button>
+            </div>
+        </form>
+    </div>
+</div> 

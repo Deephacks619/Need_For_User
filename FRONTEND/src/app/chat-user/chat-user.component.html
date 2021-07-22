@@ -1,0 +1,41 @@
+<div class="text-center">
+    <h3>Contact Donor</h3>
+</div>
+<div class="container chatpage">
+    <div class="messages text-right">
+        <br>
+        <form #ref="ngForm">
+            <div class="form-group ">
+                <label for="item">please select item what you want</label>
+                <select name="item" id="item"  class="form-control inp" required ngModel [(ngModel)]="item">
+                  <option value="" selected disabled hidden>Select Item...</option>
+                  <option value="apron" >Apron</option>
+                  <option value="calci" >Calci</option>
+                </select>
+            </div>
+            <ng-container>
+                <div class="text-center">
+                    <button type="submit" (click)=func() class="btn btn-primary" [disabled]="!ref.valid">Send Notifications</button>
+                </div>
+                  <div *ngIf="isshown" class="text-center">
+                    <p>(If You press the button then web notifications will be automatically to every servicer for requesting your item)</p>
+                    <p>(If they accept your request then the information of servicers will display here).</p>
+                  </div>
+            </ng-container>
+            <div *ngFor="let item of data">
+                <div class="cardss">
+                    <div class="">
+                        <p>Name:{{item.name}}</p>
+                        <p >Roll-Number:{{item.rollnumber}}</p>
+                        <p>email:{{item.email}} </p>
+                        <p>Phone-Number:{{item.phoneno}}</p>
+                        <p>Year:{{item.gradyear}}</p>
+                        <p>Section:{{item.section}}</p>
+                        <p>Class Room-No:{{item.roomno}}</p>
+                        <p>Wants to service:{{item.service}}</p>
+                    </div>  
+             </div> 
+            </div>
+        </form>
+    </div>
+</div>

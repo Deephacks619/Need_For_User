@@ -1,0 +1,16 @@
+.register{
+    margin-top:150px;
+    background-color:rgba(255, 255, 255, 0.8);
+    border-radius:20px;
+    box-shadow: 0px 20px 20px 0px;
+    padding:20px;
+}
+.capt{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-top: 20px;
+    font-size:30px;
+    font-weight: bold;
+}
+.butt{
+    display:flex;
+}

@@ -1,0 +1,16 @@
+.cardss{
+    border-radius: 5px;
+    box-shadow: 0px 5px 20px rgb(71,71,71);
+    background-color: whitesmoke;
+    margin: 15px;
+    display: grid;
+	grid-gap: 10px;
+	padding: 20px;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    width: 300px;
+    
+}
+.cardss:hover{
+    transform: scale(1.03);
+    transition: 0.3s;
+}

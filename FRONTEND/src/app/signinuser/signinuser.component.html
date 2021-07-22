@@ -1,0 +1,76 @@
+<div class="container register">
+    <p class="text-center capt">User SignIn form</p>
+    <form #f="ngForm">
+      <!-- username-->
+      <div class="row">    
+        <div class="form-group col-md-6" >
+          <label for="name">Name</label>
+          <input type="text" id='name' class="form-control" name="username" placeholder="Enter your Name" required [(ngModel)]="UserData.username">
+        </div>
+        <!-- Roll Number -->
+        <div class="form-group col-md-6" >
+          <label for="roll_number">Roll_Number</label>
+          <input type="text" id='roll_number' class="form-control" name="roll_number" placeholder="Enter your Roll Number" required [(ngModel)]="UserData.rollnumber">
+        </div>
+      </div>
+      <!--current year of graduation-->
+      <div class="row">
+      <div class="form-group col-md-6">
+        <label for="year">current year of graduation</label>
+        <select name="year" id="year"  class="form-control"  required [(ngModel)]="UserData.gradyear"> 
+          <option value="" selected disabled hidden>Choose year...</option>
+          <option value="1" >1st year</option>
+          <option value="2" >2nd year</option>
+          <option value="3">3rd year</option>
+          <option value="4" >4th year</option>
+        </select>
+      </div>
+      
+      <!--section -->
+      <div class="form-group col-md-6">
+        <label for="section">Section</label>
+        <select id="section" name="section" class="form-control" [(ngModel)]="UserData.section" required>
+          <option value="" selected hidden disabled>Choose Section</option>
+          <option value="A">A</option>
+          <option value="B">B</option>
+          <option value="C">C</option>
+          <option value="D">D</option>
+        </select>
+      </div>
+      </div> 
+      <!-- class room no-->
+      <div class="row">
+      <!-- Phone number-->
+      <div class="form-group col-md-6">
+        <label for="phone">Whats Up Phone Number</label>   
+        <input type="number" class="form-control" id="phone" name="phoneno" placeholder="Enter your Phone Number" minlength="10" and maxlength="10" required [(ngModel)]="UserData.phonenumber">
+      </div>
+      
+  
+      <!--email-->
+      <div class="form-group col-md-6">
+        <label for="email">Email</label>
+        <input type="email" id='email' class="form-control" name="email" placeholder="Enter email" [(ngModel)]="UserData.email" required>
+      </div>
+      </div>
+     
+      <!-- gender-->
+      <div class="form-group">
+        <label>select gender</label>
+        <div class="form-check">
+          <input type="radio" id="m" name="gender" value="male" class="form-check-input" [(ngModel)]="UserData.gender" required>
+          <label class="form-check-label" for="m">Male</label>
+        </div>
+        <div class="form-check">
+          <input type="radio" id="f" name="gender" value="female" class="form-check-input" [(ngModel)]="UserData.gender"   required>
+          <label class="form-check-label" for="f">Female</label>
+        </div>
+      </div>
+
+      
+      <div class="border p-3 mb-4">
+        <div class="text-center"> 
+          <button type="submit" (click)=getuserData(f.value) routerLink="/UserPage/UserPages"   class="btn btn-primary"  [disabled]="!f.valid">Sign In</button>
+        </div>
+      </div> 
+    </form>
